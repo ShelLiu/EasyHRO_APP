@@ -1,0 +1,60 @@
+/**
+ * Created by AshZhang on 15/9/28.
+ */
+
+
+@import "../../common/styles/_variables";
+
+
+.info-card-heading {
+  background: @color-bg-gray;
+  margin-left: -@gap;
+  margin-right: -@gap;
+  padding: (@control-sm-height - @font-base * @line-height) / 2;
+
+  &:first-child {
+    margin-top: @gap;
+  }
+}
+
+.info-card {
+  border-radius: @border-radius;
+  box-shadow: @shadow-depth-1;
+  margin-bottom: @gap * 1.2;
+}
+
+.info-card-title {
+  background: @color-bg-gray;
+  padding: (@control-sm-height - @font-base * @line-height) / 2;
+}
+
+.info-card-item {
+  border-top: @border-width solid @color-border;
+  list-style: none;
+  padding: (@control-sm-height - @font-base * @line-height) / 2;
+  white-space: nowrap;
+
+  &:first-child {
+    border-top: 0;
+  }
+}
+
+.info-card-name {
+  float: left;
+  margin-right: 2%;
+  overflow: auto;
+  width: 48%;
+}
+
+.info-card-value {
+  float: right;
+  margin-left: 2%;
+  overflow: auto;
+  text-align: right;
+  width: 48%;
+
+  &:only-child {
+    text-align: left;
+    width: 100%;
+  }
+}

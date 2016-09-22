@@ -1,0 +1,100 @@
+/**
+ * Created by AshZhang on 15/9/29.
+ */
+
+
+@import "../../common/styles/_variables";
+
+
+@search-height: 2.25rem;
+
+
+.search {
+  min-height: @search-height;
+  position: relative;
+}
+
+.search-toggle,
+.search-close {
+  background: transparent;
+  position: absolute;
+    right: 0;
+    top: -(@control-height - @search-height) / 2;
+  width: @control-height;
+}
+
+.search-text.form-control {
+  border: 0;
+  margin-bottom: 0;
+  margin-right: (@control-height - @search-height) / 2;
+  padding-top: 0;
+
+  .text-input-with-icon {
+    border: 0;
+    height: @search-height;
+  }
+
+  [type=text] {
+    background: @color-bg;
+    border-radius: @search-height / 2;
+    color: @color-text;
+    min-height: @search-height;
+    padding: 0 @search-height;
+  }
+
+  .text-input-icon {
+    background: transparent;
+  }
+
+  .text-input-icon,
+  .search-close {
+    color: @color-text-lighter;
+    font-size: @search-height / 2;
+    height: @search-height;
+    line-height: @search-height;
+    width: @search-height;
+  }
+}
+
+
+// Animation
+// ---------------------------
+
+.search-enter,
+.search-leave.search-leave-active {
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: -webkit-transform @duration ease-in-out;
+  transition: transform @duration ease-in-out;
+
+  .search-text.form-control [type=text] {
+    border-radius: 0;
+  }
+}
+
+.search-enter.search-enter-active,
+.search-leave {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+
+  .search-close {
+    display: none;
+  }
+}
+
+
+// Header
+// ---------------------------
+
+header {
+
+  .search {
+    position: absolute;
+      left: @control-height;
+      right: 0;
+      top: (@control-height - @search-height) / 2;
+      z-index: @z-header + 1;
+  }
+}

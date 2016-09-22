@@ -1,0 +1,46 @@
+/**
+ * Created by AshZhang on 15/9/29.
+ */
+
+
+@import "../../common/styles/_variables";
+
+
+.sorter {
+  background: @color-bg-light;
+  color: @color-text-light;
+  display: table;
+  line-height: @control-height;
+  table-layout: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+.sorter-item {
+  display: table-cell;
+
+  &.active {
+    color: @color-primary;
+  }
+}
+
+.sorter-item-text {
+  position: relative;
+
+  .active > &::after {
+    content: '\f107';
+    display: inline-block;
+    font-family: FontAwesome;
+    position: absolute;
+      right: -@font-base;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transition: all @duration @timing;
+    transition: all @duration @timing;
+  }
+
+  .active.asc > &::after {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
+}

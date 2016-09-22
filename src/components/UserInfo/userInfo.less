@@ -1,0 +1,65 @@
+/**
+ * Created by AshZhang on 15/9/28.
+ */
+
+
+@import "../../common/styles/_variables";
+
+
+@user-avatar-size:  @control-sm-height;
+
+
+// Normal
+// ---------------------------
+
+.user-info {
+  line-height: 1;
+  position: relative;
+}
+
+.user-info-avatar {
+  background: url(default-avatar.png) center center no-repeat;
+  background-size: 100%;
+  border-radius: 50%;
+  float: left;
+  margin-right: @gap;
+  height: @user-avatar-size;
+  width: @user-avatar-size;
+}
+
+.user-info-pos {
+  color: @color-text-light;
+  font-size: @font-sm;
+  margin-top: @user-avatar-size - @font-base - @font-sm;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.user-info-action {
+  color: @color-primary;
+  line-height: @user-avatar-size;
+  padding-left: @gap;
+  position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+// Simple style
+// ---------------------------
+
+.user-info-simple {
+  line-height: @user-avatar-size;
+
+  .user-info-name {
+    float: left;
+    width: 50%;
+  }
+
+  .user-info-pos {
+    float: right;
+    margin: 0;
+    text-align: right;
+    width: 50%;
+  }
+}

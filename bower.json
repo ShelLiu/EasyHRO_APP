@@ -1,0 +1,25 @@
+{
+  "name": "cdp-portal-html5",
+  "description": "CDP Portal - HTML5 version",
+  "main": "index.js",
+  "authors": [
+    "Ash Zhang"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "cdp",
+    "portal",
+    "html5"
+  ],
+  "homepage": "https://github.com/ashnorseman/CDPCloudHtml5",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Chart.js": "~1.0.2"
+  }
+}

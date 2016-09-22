@@ -1,0 +1,76 @@
+/**
+ * Created by AshZhang on 15/9/25.
+ */
+
+
+@import "../../common/styles/_variables";
+
+
+@dropdown-arrow-size: 0.375rem;
+
+
+// Toggle
+// ---------------------------
+
+.dropdown-toggle {
+  position: absolute;
+    right: 0;
+    top: 0;
+  width: @control-height;
+}
+
+
+// List
+// ---------------------------
+
+.dropdown {
+  background: @color-text;
+  border-radius: @border-radius;
+  font-size: @font-sm;
+  line-height: @control-sm-height;
+  list-style: none;
+  min-width: 8rem;
+  position: absolute;
+    right: @gap;
+    top: @control-height;
+
+  &::before {
+    border: @dropdown-arrow-size solid transparent;
+    border-bottom-color: @color-text;
+    content: ' ';
+    position: absolute;
+      right: @control-height / 2 - @dropdown-arrow-size - @gap;
+      top: -@dropdown-arrow-size * 2;
+  }
+}
+
+.dropdown-item {
+  border-top: @border-width solid fade(@color-bg, 15);
+  padding: 0 (@control-sm-height - @font-sm) / 2;
+
+  &:first-child {
+    border-top: 0;
+  }
+}
+
+
+// Animation
+// ---------------------------
+
+.dropdown-enter,
+.dropdown-leave.dropdown-leave-active {
+  opacity: 0.01;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all @duration @timing;
+  transition: all @duration @timing;
+}
+
+.dropdown-enter.dropdown-enter-active,
+.dropdown-leave {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}

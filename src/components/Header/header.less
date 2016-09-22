@@ -1,0 +1,46 @@
+/**
+ * Created by AshZhang on 15/9/25.
+ */
+
+
+@import "../../common/styles/_variables";
+
+
+// Header
+// ---------------------------
+
+header {
+  background: @color-primary;
+  box-shadow: @shadow-depth-1;
+  color: @color-bg;
+  min-height: @control-height;
+  padding: 0 @control-height;
+  position: relative;
+    z-index: @z-header;
+
+  > h1 {
+    font-size: @font-lg;
+    font-weight: 400;
+    line-height: @control-height;
+    text-align: center;
+  }
+}
+
+
+// Icons
+// ---------------------------
+
+.header-icon-left,
+.header-icon-right {
+  position: absolute;
+    top: 0;
+  width: @control-height;
+}
+
+.header-icon-left {
+  left: 0;
+}
+
+.header-icon-right {
+  right: 0;
+}

@@ -1,0 +1,57 @@
+/**
+ * Created by AshZhang on 15/10/13.
+ */
+
+
+@import "../../common/styles/_variables";
+
+
+.side-nav {
+  background: mix(#000, @color-text);
+  box-shadow: 0 0 1rem fade(#000, 80);
+  height: 100%;
+  position: fixed;
+    left: 0;
+    top: 0;
+    z-index: @z-side-nav;
+  width: 80%;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: all @duration ease-in-out;
+  transition: all @duration ease-in-out;
+
+  &.opened {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.side-nav-item {
+  color: @color-bg;
+  display: block;
+  line-height: @control-height;
+  padding: 0 (@control-height - @font-base * @line-height) / 2;
+}
+
+
+// Body
+// ---------------------------
+
+.side-nav-opened {
+  height: 100%;
+  overflow: hidden;
+}
+
+
+// Cover
+// ---------------------------
+
+.side-nav-cover {
+  background: fade(#000, 60);
+  height: 100%;
+  position: fixed;
+    left: 0;
+    top: 0;
+    z-index: @z-side-nav - 1;
+  width: 100%;
+}

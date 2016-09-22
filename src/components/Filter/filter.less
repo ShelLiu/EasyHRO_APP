@@ -1,0 +1,72 @@
+/**
+ * Created by AshZhang on 15/10/10.
+ */
+
+
+@import "../../common/styles/_variables";
+
+
+.filter {
+  background: darken(@color-bg, 3);
+  box-shadow: @shadow-depth-1;
+  color: @color-text-light;
+  display: table;
+  line-height: @control-height;
+  list-style: none;
+  position: relative;
+  table-layout: fixed;
+  text-align: center;
+  width: 100%;
+
+  &.fixed {
+    position: fixed;
+      left: 0;
+      top: 0;
+      z-index: @z-header;
+  }
+}
+
+.filter-item {
+  display: table-cell;
+}
+
+.filter-text {
+  display: block;
+
+  .active > & {
+    color: @color-primary;
+  }
+}
+
+.filter-choice-list {
+  background: @color-bg;
+  opacity: 0;
+  position: absolute;
+    left: 0;
+    top: @control-height;
+  text-align: left;
+  width: 100%;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transition: all @duration ease-in-out;
+  transition: all @duration ease-in-out;
+
+  .opened > & {
+    opacity: 1;
+    z-index: @z-filter-drop;
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+
+.filter-choice {
+  border-bottom: @border-width solid @color-border;
+  list-style: none;
+  padding-left: (@control-height - @font-base) / 2;
+
+  &.active {
+    color: @color-primary;
+  }
+}

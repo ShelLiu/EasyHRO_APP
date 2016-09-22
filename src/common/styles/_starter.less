@@ -1,0 +1,98 @@
+/**
+ * CSS Starter
+ */
+
+
+*,
+::before,
+::after {
+  border: 0 solid;
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  background: @color-bg;
+  color: @color-text;
+  height: 100%;
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: @line-height;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+audio:not([controls]) {
+  display: none;
+}
+
+button,
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="email"],
+[type="file"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="reset"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+select,
+textarea {
+  background: @form-element-bg;
+  color: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  outline: 0;
+  min-height: @control-height;
+  width: 100%;
+}
+
+hr {
+  border-top: @border-width solid @color-border;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+textarea {
+  resize: vertical;
+}

@@ -1,0 +1,30 @@
+/**
+ * Created by AshZhang on 15/10/9.
+ */
+
+
+@import "../../common/styles/_variables";
+
+
+.pull-loader {
+  font-size: @font-sm;
+  height: @control-height;
+  line-height: @control-height;
+  text-align: center;
+
+  &.loading {
+    padding-top: @gap;
+
+    .fa {
+      font-size: @font-icon-button;
+    }
+  }
+
+  &.loaded {
+    color: fade(@color-primary, 30);
+  }
+
+  &.no-more-data {
+    color: @color-text-lighter;
+  }
+}

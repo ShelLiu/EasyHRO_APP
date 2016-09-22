@@ -1,0 +1,34 @@
+/**
+ * Created by AshZhang on 15/10/8.
+ */
+
+
+@import "../../common/styles/_variables";
+
+
+.loader {
+
+  &.loading,
+  &.load-error {
+    font-size: @font-icon-button;
+    padding: @control-height 0;
+    text-align: center;
+  }
+
+  &.loading {
+    position: relative;
+
+    .fa {
+      position: absolute;
+        top: 50%;
+        left: 50%;
+      margin-left: -@font-icon-button / 2;
+      margin-top: -@font-icon-button / 2;
+    }
+  }
+
+  &.load-error {
+    color: @color-text-lighter;
+    font-size: @font-icon-button * 2;
+  }
+}

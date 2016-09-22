@@ -1,0 +1,51 @@
+/**
+ * Created by AshZhang on 15/10/3.
+ */
+
+
+@import "../../common/styles/_variables";
+
+
+.page-opener {
+  background: @color-bg;
+  height: 100%;
+  opacity: 0.01;
+  overflow: auto;
+  padding-top: @gap;
+  position: fixed;
+    left: 0;
+    top: 0;
+    z-index: @z-page-opener;
+  width: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all @duration ease-in-out;
+  transition: all @duration ease-in-out;
+
+  &.opened {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  .loader .fa-spinner {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-left: -0.5em;
+  }
+}
+
+
+.page-closer {
+  color: @color-text-lighter;
+  font-size: @font-icon-button;
+  height: @control-height;
+  line-height: @control-height;
+  position: absolute;
+    right: 0;
+    top: 0;
+    z-index: @z-page-opener + 1;
+  text-align: center;
+  width: @control-height;
+}

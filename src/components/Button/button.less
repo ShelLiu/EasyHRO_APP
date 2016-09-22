@@ -1,0 +1,58 @@
+/**
+ * Created by AshZhang on 15/9/27.
+ */
+
+
+@import "../../common/styles/_variables";
+
+
+button {
+  background: @color-primary;
+  border-radius: @border-radius;
+  color: @color-bg;
+
+  &[disabled] {
+    opacity: 0.6;
+  }
+
+  &.btn-submitting {
+    opacity: 1;
+    text-indent: -@font-base * @line-height - @gap;
+  }
+
+  > .fa-spinner {
+    margin-right: @gap;
+    text-indent: 0;
+    vertical-align: -(@font-base * @line-height - @font-base) / 2;
+  }
+}
+
+.btn-hollow {
+  background: transparent;
+  border-width: @border-width;
+  color: inherit;
+
+  &[disabled] {
+    background: @color-bg-trans-light;
+    border: 0;
+  }
+}
+
+.btn-link {
+  background: transparent;
+  color: @color-primary;
+}
+
+.btn-action {
+  border-radius: 50%;
+  min-height: @control-sm-height;
+  position: fixed;
+    bottom: @control-height * 2;
+    right: @gap;
+    z-index: @z-action-button;
+  width: @control-sm-height;
+
+  .fa {
+    line-height: @control-sm-height;
+  }
+}

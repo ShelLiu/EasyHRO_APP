@@ -1,0 +1,37 @@
+/**
+ * Created by AshZhang on 15/9/28.
+ */
+
+
+@import "../../common/styles/_variables";
+
+
+// With icon
+// ---------------------------
+
+.text-input-with-icon {
+  border: @border-width solid @color-bg-trans-light;
+  border-radius: @border-radius;
+  height: @control-height;
+  overflow: hidden;
+  position: relative;
+
+  > input {
+    padding-left: @control-height;
+    position: absolute;
+      left: 0;
+      top: 0;
+  }
+}
+
+.text-input-icon {
+  background: @color-bg-trans-light;
+  font-size: @font-icon-button;
+  line-height: @control-height - @border-width * 2;
+  position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  text-align: center;
+  width: @control-height - @border-width;
+}

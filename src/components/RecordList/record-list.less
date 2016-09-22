@@ -1,0 +1,92 @@
+/**
+ * Created by AshZhang on 15/10/10.
+ */
+
+
+@import '../../common/styles/_variables';
+
+
+.record-list {
+
+  > li {
+    padding: @gap / 2 @gap;
+
+    &:nth-child(even) {
+      background: mix(@color-bg-light, @color-bg-gray);
+    }
+  }
+}
+
+.record-list-selectable {
+  list-style: none;
+  padding-left: @control-height - @gap;
+
+  > li {
+    position: relative;
+  }
+}
+
+.record-item {
+  color: inherit;
+  display: block;
+  padding: @gap / 2 0;
+  position: relative;
+}
+
+.record-item-select {
+  padding-top: @gap / 2;
+  position: absolute;
+    bottom: 0;
+    left: -@control-height;
+    top: 0;
+  text-align: center;
+  width: @control-height;
+}
+
+.record-item-name-bar {
+  display: block;
+  padding-bottom: 0.5em;
+
+  .text-lighter {
+    float: right;
+  }
+}
+
+.record-item-name {
+  color: @color-text;
+  display: block;
+}
+
+.record-item-time {
+  color: @color-text-lighter;
+  font-size: @font-sm;
+}
+
+.record-item-hours,
+.record-item-status {
+  color: @color-text-lighter;
+  font-size: @font-sm;
+  position: absolute;
+    right: 0;
+    top: @gap / 2;
+
+  .with-name & {
+    top: @font-base * @line-height + @gap / 2 + @font-base / 2;
+  }
+}
+
+.record-item-status {
+  top: @font-base * @line-height + @gap / 2  + 0.1rem;
+
+  .with-name & {
+    top: @font-base * @line-height * 2 + @gap / 2 + @font-base / 2 + 0.1rem;
+  }
+}
+
+.record-item-status-1 {
+  color: @color-style-1;
+}
+
+.record-item-status-2 {
+  color: @color-style-2;
+}

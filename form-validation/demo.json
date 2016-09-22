@@ -1,0 +1,30 @@
+{
+  "items":[{
+    "name" : "edit",
+    "zh_text" : "编辑中",
+    "en_text" : "Edit",
+    "jp_text" : "変更中",
+    "value" : "edit"
+  },
+    {
+      "name" : "approving",
+      "zh_text" : "审批中",
+      "en_text" : "Approving",
+      "jp_text" : "承認中",
+      "value" : "approving"
+    },
+    {
+      "name" : "approved",
+      "zh_text" : "已批准",
+      "en_text" : "Approved",
+      "jp_text" : "已承認",
+      "value" : "approved"
+    },
+    {
+      "name" : "rejected",
+      "zh_text" : "不批准",
+      "en_text" : "Not Approved",
+      "jp_text" : "不承認",
+      "value" : "rejected"
+    }]
+}
