@@ -32,6 +32,7 @@ import Loader from './components/Loader/Loader.jsx';
 import PullLoader from './components/PullLoader/PullLoader.jsx';
 import Chart from './components/Chart/Chart.jsx';
 import PageOpener from './components/PageOpener/PageOpener.jsx';
+import ConfirmButton from './components/ConfirmButton/ConfirmButton.jsx';
 
 
 React.initializeTouchEvents(true);
@@ -427,6 +428,8 @@ class Page extends Component {
         <UserList userList={userList}></UserList>
 
         <InfoCard title='基本信息' items={infoCard}></InfoCard>
+
+        <ConfirmButton text='撤销单据' onTouchTap={onEvent}/>
 
         <ActionMenu items={actionMenuItems} />
 
