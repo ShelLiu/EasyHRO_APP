@@ -15,6 +15,7 @@ import InfoCard from '../../components/InfoCard/InfoCard.jsx';
 import FormControl from '../../components/FormControl/FormControl.jsx';
 import TextInput from '../../components/TextInput/TextInput.jsx';
 import Button from '../../components/Button/Button.jsx';
+import ConfirmButton from '../../components/ConfirmButton/ConfirmButton.jsx';
 
 import LeaveStore from '../../stores/LeaveStore';
 import LeaveDataUtils from '../../data-utils/LeaveDataUtils';
@@ -24,6 +25,7 @@ class LeaveRecord extends Component {
 
   constructor(props) {
     super(props);
+    this.revoke = this.revoke.bind(this);
     this.approve = this.approve.bind(this);
     this.reject = this.reject.bind(this);
 
@@ -50,6 +52,7 @@ class LeaveRecord extends Component {
     const { status, leaveRecord } = this.state,
       appInfo = leaveRecord.appInfo,
       baseInfo = leaveRecord.baseInfo,
+      btnRevoke = (leaveRecord.onRevoke === true),
       mgr = (this.props.route.name === 'leave-record-mgr');
 
     return (
@@ -76,6 +79,11 @@ class LeaveRecord extends Component {
                           })
                         }
                       </div>
+                    : null
+                }
+                {
+                  btnRevoke
+                    ? <ConfirmButton text='撤销单据' onTouchTap={this.revoke}/>
                     : null
                 }
               </Loader>
@@ -115,6 +123,14 @@ class LeaveRecord extends Component {
     } else {
       LeaveDataUtils.getLeaveRecord(this.props.params && this.props.params.id);
     }
+  }
+
+
+  /**
+   * Revoke a record
+   */
+  revoke() {
+      LeaveDataUtils.revokeRecord(this.props.params.id);
   }
 
 
