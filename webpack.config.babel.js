@@ -38,7 +38,7 @@ if (TARGET === 'start' || TARGET === 'dev') {
       }
     },
     devtool: 'source-map',
-    entry: path.resolve(ROOT_PATH, isDev ? 'src/modules.jsx' : 'src/modules.jsx'),
+    entry: path.resolve(ROOT_PATH, isDev ? 'src/modules.jsx' : 'src/app.jsx'),
     module: {
       loaders: [
         {

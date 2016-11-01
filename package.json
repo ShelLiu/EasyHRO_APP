@@ -4,9 +4,9 @@
   "description": "CDP Portal - HTML5 version",
   "main": "index.js",
   "scripts": {
-    "build": "SET BABEL_ENV=production & webpack",
-    "test": "SET BABEL_ENV=production & karma start",
-    "start": "webpack-dev-server & npm run server",
+    "build": "SET BABEL_ENV=production && webpack",
+    "test": "SET BABEL_ENV=production && karma start",
+    "start": "webpack-dev-server && npm run-script server",
     "dev": "webpack-dev-server",
     "server": "nodemon index --ignore /src --ignore /test"
   },
