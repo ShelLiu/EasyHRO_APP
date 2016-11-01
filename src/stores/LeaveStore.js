@@ -236,6 +236,21 @@ class LeaveStore extends ReduceStore {
     case 'leave-record-reject-success':
       history.back();
       return state;
+    case 'leave-record-revoke':
+      return assign({}, state, {
+        status: 'loading'
+      });
+    case 'leave-record-revoke-success':
+      alert('撤销成功');
+      return assign({}, state, {
+        leaveRecord: action.data,
+        status: 'loaded'
+      });
+    case 'leave-record-revoke-fail':
+      alert('撤销失败');
+      return assign({}, state, {
+        status: 'loaded'
+      });
     case 'get-leave-summary-filters':
       return {
         ...state,

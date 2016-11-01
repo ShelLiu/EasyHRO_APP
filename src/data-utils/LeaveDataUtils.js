@@ -344,6 +344,23 @@ export default {
   },
 
 
+  /**
+   * Revoke a record
+   * @param id
+   */
+  revokeRecord({id}) {
+
+    ajaxDispatch({
+      action: 'leave-record-revoke',
+      url: '/lv-revoke',
+      method: 'post',
+      data: {
+        id
+      }
+    });
+  },
+
+
   getFilter(companyCode) {
     ajax.get('/custom/config/' + companyCode.toUpperCase() + '_LV_STATE.json')
       .then((res) => {

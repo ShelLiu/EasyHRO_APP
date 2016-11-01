@@ -716,6 +716,56 @@ app.get('/:path?/:any?/:thing?', function (req, res) {
         }())
       });
     case 'ess-lv-detail':
+      return res.json({
+        "val": {
+          appInfo: {
+            "title": "审批信息",
+            "items": [[{
+              "firField": "审批人",
+              "secField": "海 天"
+            }, {
+              "firField": "状态",
+              "secField": "审批中"
+            }], [{
+              "firField": "审批人",
+              "secField": "李 康"
+            }, {
+              "firField": "状态",
+              "secField": "待审批"
+            }]]
+          },
+          baseInfo: {
+            "title": "单据信息",
+            "items": [{
+              "firField": "员工姓名",
+              "secField": "刘 天"
+            }, {
+              "firField": "审批状态",
+              "secField": "审批中"
+            }, {
+              "firField": "休暇型名",
+              "secField": "晚婚假"
+            }, {
+              "firField": "开始时间",
+              "secField": "2015/11/27 09:00:00"
+            }, {
+              "firField": "结束时间",
+              "secField": "2015/11/30 17:30:00"
+            }, {
+              "firField": "休假小时数",
+              "secField": "15"
+            }, {
+              "firField": "申请日期",
+              "secField": "2015/11/09"
+            }, {
+              "firField": "休假理由",
+              "secField": "test"
+            }]
+          },
+          onRevoke: true
+        },
+        "res": true
+      });
     case 'ess-ot-detail':
       return res.json({
         "val": {
@@ -791,6 +841,7 @@ app.get('/:path?/:any?/:thing?', function (req, res) {
         ],
         "res": true
       });
+    case 'lv-approve-update':
     case 'lv-approve-his':
     case 'ot-approve-his':
     case 'lv-history-member':
@@ -1433,6 +1484,57 @@ app.post('/:path?/:id?', multer.single('attach'), function (req, res) {
       return res.json({
         res: true,
         confirm: 'Confirm'
+      });
+    case 'lv-revoke':
+      return res.json({
+        res: true,
+        val: {
+          appInfo: {
+            "title": "审批信息",
+            "items": [[{
+              "firField": "审批人",
+              "secField": "海 天"
+            }, {
+              "firField": "状态",
+              "secField": "审批中"
+            }], [{
+              "firField": "审批人",
+              "secField": "李 康"
+            }, {
+              "firField": "状态",
+              "secField": "待审批"
+            }]]
+          },
+          baseInfo: {
+            "title": "单据信息",
+            "items": [{
+              "firField": "员工姓名",
+              "secField": "刘 天"
+            }, {
+              "firField": "审批状态",
+              "secField": "已撤销"
+            }, {
+              "firField": "休暇型名",
+              "secField": "晚婚假"
+            }, {
+              "firField": "开始时间",
+              "secField": "2015/11/27 09:00:00"
+            }, {
+              "firField": "结束时间",
+              "secField": "2015/11/30 17:30:00"
+            }, {
+              "firField": "休假小时数",
+              "secField": "15"
+            }, {
+              "firField": "申请日期",
+              "secField": "2015/11/09"
+            }, {
+              "firField": "休假理由",
+              "secField": "test"
+            }]
+          },
+          onRevoke: false
+        }
       });
     case 'lv-team-summary':
     case 'ot-team-summary':
