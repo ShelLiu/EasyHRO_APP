@@ -130,7 +130,9 @@ class LeaveRecord extends Component {
    * Revoke a record
    */
   revoke() {
-      LeaveDataUtils.revokeRecord(this.props.params.id);
+      LeaveDataUtils.revokeRecord({
+        id: this.props.params.id
+      });
   }
 
 
