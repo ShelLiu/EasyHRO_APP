@@ -113,6 +113,15 @@ export default {
 		});
 	},
 
+	revokeRecord(data) {
+		ajaxDispatch({
+			action: 'revoke-ot-record',
+			url: '/ot-revoke',
+			method: 'post',
+			data
+		});
+	},
+
 	getHistoryList(query) {
 		ajaxDispatch({
 			action: 'get-ot-history-list',

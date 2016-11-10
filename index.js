@@ -812,7 +812,8 @@ app.get('/:path?/:any?/:thing?', function (req, res) {
               "firField": "休假理由",
               "secField": "test"
             }]
-          }
+          },
+          onRevoke: true
         },
         "res": true
       });
@@ -1485,6 +1486,7 @@ app.post('/:path?/:id?', multer.single('attach'), function (req, res) {
         res: true,
         confirm: 'Confirm'
       });
+    case 'ot-revoke':
     case 'lv-revoke':
       return res.json({
         res: true,
@@ -1532,8 +1534,7 @@ app.post('/:path?/:id?', multer.single('attach'), function (req, res) {
               "firField": "休假理由",
               "secField": "test"
             }]
-          },
-          onRevoke: false
+          }
         }
       });
     case 'lv-team-summary':

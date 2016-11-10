@@ -26,5 +26,12 @@
       "en_text" : "Not Approved",
       "jp_text" : "不承認",
       "value" : "rejected"
+    },
+    {
+      "name" : "revoked",
+      "zh_text" : "已撤销",
+      "en_text" : "Revoked",
+      "jp_text" : "已撤销",
+      "value" : "revoked"
     }]
 }

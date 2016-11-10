@@ -100,6 +100,22 @@ class OvertimeStore extends ReduceStore {
 				pendingRecords: state.pendingQuery.page === 1 ? action.data : state.pendingRecords.concat(action.data),
 				status: 'loaded'
 			};
+		case 'revoke-ot-record':
+			return {
+				...state,
+				status: 'loading'
+			};
+		case 'revoke-ot-record-success':
+			return {
+				...state,
+				empOtRecord: action.data,
+				status: 'loaded'
+			};
+		case 'revoke-ot-record-fail':
+			return {
+				...state,
+				status: 'loaded'
+			};
 		case 'approve-ot-pending-record-success':
 			return history.back();
 		case 'get-ot-history-list':
