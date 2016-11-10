@@ -49,6 +49,7 @@ const lang = {
     SAVE: '保存',
     SUBMIT: '提交',
     DROP: '删除',
+    REVOKE: '撤销',
 
     // HOME
     EMPLOYEE: '员工',
@@ -126,7 +127,10 @@ const lang = {
 
     // Punctuation
     COLON: '：',
-    COMMA: '，'
+    COMMA: '，',
+
+    // Message
+    CONFIRM_MSG: '确认执行此操作'
   },
 
   en: {
@@ -160,6 +164,7 @@ const lang = {
     SAVE: 'Save',
     SUBMIT: 'Submit',
     DROP: 'Drop',
+    REVOKE: 'Undo',
 
     // HOME
     EMPLOYEE: 'Employee',
@@ -237,7 +242,10 @@ const lang = {
 
     // Punctuation
     COLON: ': ',
-    COMMA: ', '
+    COMMA: ', ',
+
+    // Message
+    CONFIRM_MSG: 'Are you sure'
   },
 
   jp: {
@@ -271,6 +279,7 @@ const lang = {
     SAVE: '保存',
     SUBMIT: '提交',
     DROP: '删除',
+    REVOKE: 'キャンセル',
 
     // HOME
     EMPLOYEE: '従業員',
@@ -347,7 +356,10 @@ const lang = {
 
     // Punctuation
     COLON: '：',
-    COMMA: '，'
+    COMMA: '，',
+
+    // Message
+    CONFIRM_MSG: 'あなたがこれを行うにしてもよろしいですか'
   }
 };
 

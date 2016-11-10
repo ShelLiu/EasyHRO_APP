@@ -83,7 +83,7 @@ class LeaveRecord extends Component {
                 }
                 {
                   btnRevoke
-                    ? <ConfirmButton text='撤销单据' onTouchTap={this.revoke}/>
+                    ? <ConfirmButton text={getLang('REVOKE')} onTouchTap={this.revoke}/>
                     : null
                 }
               </Loader>

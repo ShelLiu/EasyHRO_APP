@@ -9,6 +9,7 @@ import React, { Component } from 'react';
 
 import './confirmButton.less';
 
+import { getItem as getLang } from '../../common/lang';
 import Button from '../Button/Button.jsx';
 
 
@@ -37,9 +38,9 @@ export default class ConfirmButton extends Component {
           {
               isConfirm
               ? <div>
-                <p className='gap-t-lg gap-b-lg confirm-btn-text'>是否{text}？</p>
-                <Button className='gap-b' text='确认' {...attr}/>
-                <Button className='gap-b' hollow text='取消' onTouchTap={this.toggleState}/>
+                <p className='gap-t-lg gap-b-lg confirm-btn-text'>{getLang('CONFIRM_MSG')}？</p>
+                <Button className='gap-b' text={getLang('OK')} {...attr}/>
+                <Button className='gap-b' hollow text={getLang('CANCEL')} onTouchTap={this.toggleState}/>
               </div>
               : <Button className='gap-t ' text={text} onTouchTap={this.toggleState}/>
           }
