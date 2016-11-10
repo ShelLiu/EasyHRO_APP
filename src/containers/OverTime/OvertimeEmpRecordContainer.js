@@ -11,6 +11,7 @@ import { getItem as getLang } from '../../common/lang';
 import Header from '../../components/Header/Header.jsx';
 import InfoCard from '../../components/InfoCard/InfoCard.jsx';
 import Loader from '../../components/Loader/Loader.jsx';
+import ConfirmButton from '../../components/ConfirmButton/ConfirmButton.jsx';
 
 import OvertimeStore from '../../stores/OvertimeStore';
 import OvertimeDataUtils from '../../data-utils/OvertimeDataUtils';
@@ -28,6 +29,7 @@ class OvertimeEmpRecord extends Component {
 
 	constructor(props) {
 		super(props);
+		this.revoke = this.revoke.bind(this);
 
 		OvertimeDataUtils.getEmpOtRecord(this.props.routeParams.id);
 	}
@@ -39,7 +41,8 @@ class OvertimeEmpRecord extends Component {
 		} = this.state,
 		{
 			baseInfo,
-			appInfo
+			appInfo,
+			onRevoke = false
 		} = empOtRecord;
 
 		return (
@@ -65,9 +68,22 @@ class OvertimeEmpRecord extends Component {
 								}
 							</div>
 					}
+					{
+						onRevoke &&
+							<ConfirmButton text={getLang('REVOKE')} onTouchTap={this.revoke} />
+					}
 				</Loader>
 			</div>
 		);
+	}
+
+/**
+ * Revoke a record
+ */
+	revoke() {
+		OvertimeDataUtils.revokeRecord({
+			id: this.props.routeParams.id
+		});
 	}
 }
 
