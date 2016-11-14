@@ -49,10 +49,15 @@ class LeaveRecord extends Component {
   }
 
   render() {
-    const { status, leaveRecord } = this.state,
-      appInfo = leaveRecord.appInfo,
-      baseInfo = leaveRecord.baseInfo,
-      btnRevoke = (leaveRecord.onRevoke === true),
+    const {
+        status,
+        leaveRecord
+        } = this.state,
+        {
+            appInfo,
+            baseInfo,
+            onRevoke = false
+            } = leaveRecord,
       mgr = (this.props.route.name === 'leave-record-mgr');
 
     return (
@@ -82,7 +87,7 @@ class LeaveRecord extends Component {
                     : null
                 }
                 {
-                  btnRevoke
+                  onRevoke
                     ? <ConfirmButton text={getLang('REVOKE')} onTouchTap={this.revoke}/>
                     : null
                 }
@@ -131,7 +136,8 @@ class LeaveRecord extends Component {
    */
   revoke() {
       LeaveDataUtils.revokeRecord({
-        id: this.props.params.id
+        id: this.props.params.id,
+        onRevoke: this.state.leaveRecord.onRevoke
       });
   }
 

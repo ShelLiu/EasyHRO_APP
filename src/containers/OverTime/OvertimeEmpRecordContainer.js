@@ -82,7 +82,8 @@ class OvertimeEmpRecord extends Component {
  */
 	revoke() {
 		OvertimeDataUtils.revokeRecord({
-			id: this.props.routeParams.id
+			id: this.props.routeParams.id,
+			onRevoke: this.state.empOtRecord.onRevoke
 		});
 	}
 }

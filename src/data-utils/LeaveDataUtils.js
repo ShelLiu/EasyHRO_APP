@@ -346,17 +346,15 @@ export default {
 
   /**
    * Revoke a record
-   * @param id
+   * @param data
    */
-  revokeRecord({id}) {
+  revokeRecord(data) {
 
     ajaxDispatch({
       action: 'leave-record-revoke',
       url: '/lv-revoke',
       method: 'post',
-      data: {
-        id
-      }
+      data
     });
   },
 

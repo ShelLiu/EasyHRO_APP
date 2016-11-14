@@ -762,7 +762,7 @@ app.get('/:path?/:any?/:thing?', function (req, res) {
               "secField": "test"
             }]
           },
-          onRevoke: true
+          onRevoke: "cancel"
         },
         "res": true
       });
@@ -813,7 +813,7 @@ app.get('/:path?/:any?/:thing?', function (req, res) {
               "secField": "test"
             }]
           },
-          onRevoke: true
+          onRevoke: "revoke"
         },
         "res": true
       });
