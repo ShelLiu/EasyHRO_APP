@@ -163,7 +163,7 @@ export default class LeaveList extends Component {
 
         return;
       } else {
-        LeaveDataUtils.submitFormFail();
+        return;
       }
     }
 
