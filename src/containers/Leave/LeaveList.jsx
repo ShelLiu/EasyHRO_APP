@@ -111,9 +111,6 @@ export default class LeaveList extends Component {
       .then((res) => {
         LeaveDataUtils.submitFormFail();
         this.applyResponse(res);
-        this.getEmpLeaveRecords({
-          state: 'approving'
-        });
       })
       .catch(() => {
         LeaveDataUtils.submitFormFail();
